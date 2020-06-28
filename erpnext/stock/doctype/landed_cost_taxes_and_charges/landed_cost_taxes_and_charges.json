@@ -4,7 +4,6 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "expense_account",
   "description",
   "col_break3",
   "amount"
@@ -29,18 +28,10 @@
    "label": "Amount",
    "options": "Company:company:default_currency",
    "reqd": 1
-  },
-  {
-   "fieldname": "expense_account",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Expense Account",
-   "options": "Account",
-   "reqd": 1
   }
  ],
  "istable": 1,
- "modified": "2019-09-30 18:28:32.070655",
+ "modified": "2020-06-25 16:54:52.181000",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Landed Cost Taxes and Charges",

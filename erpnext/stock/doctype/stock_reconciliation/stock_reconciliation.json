@@ -1,4 +1,6 @@
 {
+ "allow_import": 1,
+ "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2013-03-28 10:35:31",
  "description": "This tool helps you to update or fix the quantity and valuation of stock in the system. It is typically used to synchronise the system values and what actually exists in your warehouses.",
@@ -45,11 +47,11 @@
    "reqd": 1
   },
   {
+   "default": "Stock Reconciliation",
    "fieldname": "purpose",
    "fieldtype": "Select",
    "label": "Purpose",
-   "options": "\nOpening Stock\nStock Reconciliation",
-   "reqd": 1
+   "options": "Opening Stock\nStock Reconciliation"
   },
   {
    "fieldname": "col1",
@@ -154,20 +156,27 @@
  "idx": 1,
  "is_submittable": 1,
  "max_attachments": 1,
- "modified": "2020-04-08 17:02:47.196206",
+ "modified": "2020-06-22 19:23:31.347459",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Stock Reconciliation",
  "owner": "Administrator",
  "permissions": [
   {
-   "amend": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock Manager"
+  },
+  {
    "cancel": 1,
    "create": 1,
    "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Stock Manager",
+   "role": "Administrator",
    "share": 1,
    "submit": 1,
    "write": 1
@@ -176,5 +185,7 @@
  "search_fields": "posting_date",
  "show_name_in_global_search": 1,
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1
 }

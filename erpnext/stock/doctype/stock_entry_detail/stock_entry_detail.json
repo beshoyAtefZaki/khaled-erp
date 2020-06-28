@@ -1,5 +1,4 @@
 {
- "actions": [],
  "autoname": "hash",
  "creation": "2013-03-29 18:22:12",
  "doctype": "DocType",
@@ -23,7 +22,6 @@
   "image",
   "image_view",
   "quantity_and_rate",
-  "set_basic_rate_manually",
   "qty",
   "basic_rate",
   "basic_amount",
@@ -93,6 +91,7 @@
   {
    "fieldname": "t_warehouse",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_list_view": 1,
    "label": "Target Warehouse",
    "oldfieldname": "t_warehouse",
@@ -183,6 +182,7 @@
    "oldfieldname": "incoming_rate",
    "oldfieldtype": "Currency",
    "options": "Company:company:default_currency",
+   "permlevel": 1,
    "print_hide": 1
   },
   {
@@ -190,6 +190,7 @@
    "fieldtype": "Currency",
    "label": "Basic Amount",
    "options": "Company:company:default_currency",
+   "permlevel": 1,
    "print_hide": 1,
    "read_only": 1
   },
@@ -198,8 +199,8 @@
    "fieldtype": "Currency",
    "label": "Additional Cost",
    "options": "Company:company:default_currency",
-   "print_hide": 1,
-   "read_only": 1
+   "permlevel": 1,
+   "print_hide": 1
   },
   {
    "fieldname": "amount",
@@ -208,6 +209,7 @@
    "oldfieldname": "amount",
    "oldfieldtype": "Currency",
    "options": "Company:company:default_currency",
+   "permlevel": 1,
    "read_only": 1
   },
   {
@@ -215,6 +217,7 @@
    "fieldtype": "Currency",
    "label": "Valuation Rate",
    "options": "Company:company:default_currency",
+   "permlevel": 1,
    "read_only": 1
   },
   {
@@ -466,9 +469,10 @@
   {
    "fetch_from": "item_code.item_group",
    "fieldname": "item_group",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Item Group"
+   "label": "Item Group",
+   "options": "Item Group"
   },
   {
    "fieldname": "reference_purchase_receipt",
@@ -481,7 +485,8 @@
    "fieldname": "project",
    "fieldtype": "Link",
    "label": "Project",
-   "options": "Project"
+   "options": "Project",
+   "read_only": 1
   },
   {
    "fieldname": "po_detail",
@@ -491,21 +496,11 @@
    "no_copy": 1,
    "print_hide": 1,
    "read_only": 1
-  },
-  {
-   "default": "0",
-   "depends_on": "eval:parent.purpose===\"Repack\" && doc.t_warehouse",
-   "fieldname": "set_basic_rate_manually",
-   "fieldtype": "Check",
-   "label": "Set Basic Rate Manually",
-   "show_days": 1,
-   "show_seconds": 1
   }
  ],
  "idx": 1,
  "istable": 1,
- "links": [],
- "modified": "2020-06-08 12:57:03.172887",
+ "modified": "2020-06-15 17:39:43.158038",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Stock Entry Detail",

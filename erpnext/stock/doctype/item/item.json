@@ -1,5 +1,4 @@
 {
- "actions": [],
  "allow_guest_to_view": 1,
  "allow_import": 1,
  "allow_rename": 1,
@@ -28,7 +27,6 @@
   "valuation_rate",
   "standard_rate",
   "is_fixed_asset",
-  "auto_create_assets",
   "asset_category",
   "asset_naming_series",
   "over_delivery_receipt_allowance",
@@ -114,8 +112,6 @@
   "is_sub_contracted_item",
   "column_break_74",
   "customer_code",
-  "default_item_manufacturer",
-  "default_manufacturer_part_no",
   "website_section",
   "show_in_website",
   "show_variant_in_website",
@@ -138,7 +134,8 @@
   "publish_in_hub",
   "hub_category_to_publish",
   "hub_warehouse",
-  "synced_with_hub"
+  "synced_with_hub",
+  "manufacturers"
  ],
  "fields": [
   {
@@ -260,7 +257,8 @@
    "depends_on": "is_stock_item",
    "fieldname": "valuation_rate",
    "fieldtype": "Currency",
-   "label": "Valuation Rate"
+   "label": "Valuation Rate",
+   "permlevel": 1
   },
   {
    "bold": 1,
@@ -345,8 +343,7 @@
   {
    "fieldname": "shelf_life_in_days",
    "fieldtype": "Int",
-   "label": "Shelf Life In Days",
-   "mandatory_depends_on": "eval:doc.has_batch_no && doc.has_expiry_date"
+   "label": "Shelf Life In Days"
   },
   {
    "default": "2099-12-31",
@@ -573,7 +570,6 @@
   {
    "default": "0.00",
    "depends_on": "is_stock_item",
-   "description": "Minimum quantity should be as per Stock UOM",
    "fieldname": "min_order_qty",
    "fieldtype": "Float",
    "label": "Minimum Order Qty",
@@ -910,7 +906,7 @@
    "description": "Item Image (if not slideshow)",
    "fieldname": "website_image",
    "fieldtype": "Attach",
-   "label": "Website Image"
+   "label": "Image"
   },
   {
    "fieldname": "thumbnail",
@@ -1021,6 +1017,12 @@
    "read_only": 1
   },
   {
+   "fieldname": "manufacturers",
+   "fieldtype": "Table",
+   "label": "Manufacturers",
+   "options": "Item Manufacturer"
+  },
+  {
    "depends_on": "eval:!doc.__islocal",
    "fieldname": "over_delivery_receipt_allowance",
    "fieldtype": "Float",
@@ -1033,34 +1035,14 @@
    "fieldname": "over_billing_allowance",
    "fieldtype": "Float",
    "label": "Over Billing Allowance (%)"
-  },
-  {
-   "default": "0",
-   "depends_on": "is_fixed_asset",
-   "fieldname": "auto_create_assets",
-   "fieldtype": "Check",
-   "label": "Auto Create Assets on Purchase"
-  },
-  {
-   "fieldname": "default_item_manufacturer",
-   "fieldtype": "Data",
-   "label": "Default Item Manufacturer",
-   "read_only": 1
-  },
-  {
-   "fieldname": "default_manufacturer_part_no",
-   "fieldtype": "Data",
-   "label": "Default Manufacturer Part No",
-   "read_only": 1
   }
  ],
  "has_web_view": 1,
  "icon": "fa fa-tag",
  "idx": 2,
  "image_field": "image",
- "links": [],
  "max_attachments": 1,
- "modified": "2020-04-07 15:56:06.195722",
+ "modified": "2020-06-24 22:11:35.147383",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Item",
