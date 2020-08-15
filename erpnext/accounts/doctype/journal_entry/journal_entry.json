@@ -4,6 +4,7 @@
  "creation": "2013-03-25 10:53:52",
  "doctype": "DocType",
  "document_type": "Document",
+ "engine": "InnoDB",
  "field_order": [
   "entry_type_and_date",
   "title",
@@ -103,6 +104,7 @@
    "width": "50%"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "posting_date",
    "fieldtype": "Date",
    "label": "Posting Date",
@@ -439,6 +441,7 @@
    "width": "50%"
   },
   {
+   "allow_on_submit": 1,
    "default": "No",
    "fieldname": "is_opening",
    "fieldtype": "Select",
@@ -488,8 +491,8 @@
  "icon": "fa fa-file-text",
  "idx": 176,
  "is_submittable": 1,
- "modified": "2020-06-02 11:26:34.895504",
- "modified_by": "Administrator",
+ "modified": "2020-08-04 11:58:32.189148",
+ "modified_by": "ezzat@etcomed.com",
  "module": "Accounts",
  "name": "Journal Entry",
  "owner": "Administrator",
